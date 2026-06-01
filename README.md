@@ -1,67 +1,29 @@
-# lab14
-SecureStorageLabJava
-https://img.shields.io/badge/Android-24%252B-brightgreen
-https://img.shields.io/badge/Java-8%252B-orange
-https://img.shields.io/badge/License-MIT-yellow.svg
+# SecureStorageLabJava
 
-📱 Description
-Application Android démontrant toutes les méthodes de persistance locale avec bonnes pratiques de sécurité.
+[![Android](https://img.shields.io/badge/Android-24%2B-brightgreen)](https://developer.android.com)
+[![Java](https://img.shields.io/badge/Java-8%2B-orange)](https://www.java.com)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-🎯 Fonctionnalités
-SharedPreferences - Stockage non sensible (thème, langue, nom)
+## 📖 Description
 
-EncryptedSharedPreferences - Stockage chiffré des tokens/secrets
+Application éducative Android démontrant toutes les méthodes de persistance locale avec des bonnes pratiques de sécurité strictes. Projet réalisé dans le cadre du cours **Programmation Mobile : Android avec Java** de **MLIAEdu**.
 
-Stockage interne - Fichiers texte UTF-8 + JSON
+## 🎯 Objectifs pédagogiques
 
-Cache - Données temporaires purgeables
+- Écrire/lire des préférences avec SharedPreferences (apply vs commit)
+- Stocker des secrets chiffrés avec EncryptedSharedPreferences + MasterKey
+- Manipuler des fichiers internes (UTF-8 et JSON)
+- Utiliser le cache temporaire (cacheDir)
+- Exporter vers le stockage externe app-specific
+- Appliquer une checklist de sécurité complète
 
-Stockage externe app-specific - Export contrôlé sans permission
+## 🛠️ Technologies
 
-🏗️ Structure
-text
-app/src/main/java/com/example/securestoragejava/
-├── ui/MainActivity.java
-├── prefs/AppPrefs.java + SecurePrefs.java
-├── files/InternalTextStore.java + StudentsJsonStore.java
-├── cache/CacheStore.java
-├── external/ExternalAppFilesStore.java
-└── model/Student.java
-🚀 Installation
-bash
-git clone https://github.com/votreusername/SecureStorageLabJava.git
-Ajouter la dépendance (déjà présente) :
+| Technologie | Version |
+|-------------|---------|
+| Android SDK | 24+ (Nougat) |
+| Langage | Java 8+ |
+| Sécurité | AndroidX Security Crypto 1.1.0-alpha06 |
+| JSON | org.json (intégré) |
 
-gradle
-implementation "androidx.security:security-crypto:1.1.0-alpha06"
-🔒 Sécurité (10 points)
-Point	Statut
-Aucun token dans Logcat	✅
-EncryptedSharedPreferences pour secrets	✅
-MODE_PRIVATE partout	✅
-Champ token en textPassword	✅
-Nettoyage complet disponible	✅
-Cache réservé au temporaire	✅
-Externe limité à app-specific	✅
-Exceptions gérées sans fuite	✅
-UTF-8 pour tous les fichiers	✅
-Affichage longueur token uniquement	✅
-📱 Interface
-Action	Description
-Sauvegarder prefs	Nom + langue + thème + token chiffré
-Charger prefs	Restauration des préférences
-Sauvegarder JSON	Crée students.json et note.txt
-Charger JSON	Lit et affiche les données
-Effacer	Purge complète (prefs + fichiers + cache)
-🐛 Dépannage rapide
-Problème	Solution
-Crypto non trouvé	Sync Gradle
-Crash encryption	API 24+ requis
-Fichiers invisibles	Vérifier /data/data/<package>/files/
-JSON vide	Sauvegarder d'abord
-📄 Licence
-MIT
-
-👩‍🏫 Crédits
-MLIAEdu - Cours Programmation Mobile Android Java
-
+## 📁 Architecture
