@@ -27,3 +27,32 @@ Application éducative Android démontrant toutes les méthodes de persistance l
 | JSON | org.json (intégré) |
 
 ## 📁 Architecture
+
+com.example.securestoragejava/
+│
+├── ui/
+│ └── MainActivity.java # Interface principale
+│
+├── prefs/
+│ ├── AppPrefs.java # SharedPreferences classiques
+│ └── SecurePrefs.java # EncryptedSharedPreferences
+│
+├── files/
+│ ├── InternalTextStore.java # Fichiers texte UTF-8
+│ └── StudentsJsonStore.java # Stockage JSON
+│
+├── cache/
+│ └── CacheStore.java # Gestion du cache
+│
+├── external/
+│ └── ExternalAppFilesStore.java # Stockage externe
+│
+└── model/
+└── Student.java # Modèle de données
+
+
+## 🚀 Installation
+
+### 1. Cloner le projet
+
+<img width="1207" height="734" alt="image" src="https://github.com/user-attachments/assets/58c33126-5740-41bd-b341-cc00c565fc3a" />
